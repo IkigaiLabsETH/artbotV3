@@ -1,0 +1,22 @@
+diff --git a/node_modules/eventemitter3/index.js b/node_modules/eventemitter3/index.js
+index 1234567..abcdefg 100644
+--- a/node_modules/eventemitter3/index.js
++++ b/node_modules/eventemitter3/index.js
+@@ -1,4 +1,4 @@
+-'use strict';
++
+ 
+ var has = Object.prototype.hasOwnProperty
+   , prefix = '~';
+@@ -368,5 +368,8 @@ EventEmitter.EventEmitter = EventEmitter;
+ //
+ // Expose the module.
+ //
+-if ('undefined' !== typeof module) {
+-  module.exports = EventEmitter;
++export { EventEmitter };
++export default EventEmitter;
++
++if (typeof module !== 'undefined') {
++  module.exports = { EventEmitter, default: EventEmitter };
+} 
